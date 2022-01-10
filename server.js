@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res)=> {
-    res.send("ok");
+    res.send("Ma che lavoro e");
   })
 //1 Signin route
 app.post('/signin', (req,res) => { signin.handleSignIn(req,res,db,bcrypt) });
