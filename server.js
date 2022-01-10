@@ -10,10 +10,12 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 const db = knex({
     client: 'pg',
     connection: {
-        connectionString: "postgres://bpyqbkajbdlnac:7a17c853f2de28a9d7ef2b82c15e97a54cdad28e9f438058eec905f96d1e807a@ec2-3-225-41-234.compute-1.amazonaws.com:5432/d2b15s257nrjir",
+        connectionString: process.env.DATABASE_URL,
         ssl: true,
     }
 })
